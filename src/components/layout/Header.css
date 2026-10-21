@@ -1,0 +1,126 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #fff;
+  box-shadow: 0 1px 0 var(--border), 0 4px 16px rgba(11, 31, 69, 0.05);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  height: 72px;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+}
+
+.nav__item {
+  position: relative;
+}
+
+.nav__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 24px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  border-bottom: 2px solid transparent;
+}
+
+.nav__link:hover,
+.nav__link.active {
+  color: var(--orange);
+}
+
+.nav__link.active {
+  border-bottom-color: var(--orange);
+}
+
+/* Category dropdown (desktop hover) */
+.nav__menu {
+  position: absolute;
+  top: 100%;
+  left: -16px;
+  display: none;
+  min-width: 240px;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 16px 32px rgba(11, 31, 69, 0.14);
+}
+
+.nav__item:hover .nav__menu,
+.nav__item:focus-within .nav__menu {
+  display: grid;
+}
+
+.nav__menu a {
+  padding: 9px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.nav__menu a:hover {
+  background: var(--bg-soft);
+  color: var(--orange);
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 1200px) {
+  .nav {
+    gap: 18px;
+  }
+}
+
+/* Collapse nav into a slide-down menu */
+@media (max-width: 900px) {
+  .header__inner {
+    height: 62px;
+  }
+
+  .nav {
+    position: absolute;
+    top: 62px;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    max-height: calc(100vh - 62px);
+    overflow-y: auto;
+    padding: 8px 16px 16px;
+    background: #fff;
+    box-shadow: 0 12px 24px rgba(11, 31, 69, 0.12);
+  }
+
+  .nav--open {
+    display: flex;
+  }
+
+  .nav__link,
+  .nav__link.active {
+    display: flex;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav__link svg,
+  .nav__item:hover .nav__menu,
+  .nav__item:focus-within .nav__menu {
+    display: none;
+  }
+}

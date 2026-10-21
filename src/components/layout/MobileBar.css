@@ -1,0 +1,30 @@
+.mobile-bar {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .mobile-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 60;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+    background: #fff;
+    box-shadow: 0 -4px 20px rgba(11, 31, 69, 0.12);
+  }
+
+  .mobile-bar .btn {
+    height: 44px;
+    padding: 0 8px;
+    font-size: 14px;
+  }
+
+  /* Keep page content clear of the fixed bar */
+  body {
+    padding-bottom: 72px;
+  }
+}

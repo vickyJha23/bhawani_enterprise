@@ -1,0 +1,19 @@
+.checklist {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.checklist svg {
+  flex: none;
+  margin-top: 3px;
+  color: var(--green);
+}

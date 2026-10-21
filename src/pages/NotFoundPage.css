@@ -1,0 +1,28 @@
+.not-found {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  text-align: center;
+}
+
+.not-found__code {
+  font-size: 72px;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--orange);
+}
+
+.not-found h1 {
+  font-size: 28px;
+  color: var(--navy-800);
+}
+
+.not-found__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}

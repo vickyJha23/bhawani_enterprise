@@ -1,0 +1,43 @@
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.small {
+  font-size: 13px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+/* Crop images from the top-left (e.g. to show the lightning arrester spike) */
+.focus-top img {
+  object-position: left top;
+}
+
+/* Responsive visibility */
+.show-sm {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .show-sm {
+    display: inline-grid !important;
+  }
+  .hide-sm {
+    display: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 16px;
+  }
+}

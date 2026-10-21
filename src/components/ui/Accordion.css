@@ -1,0 +1,38 @@
+.acc {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: #fff;
+}
+
+.acc summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  font-weight: 700;
+  color: var(--navy-800);
+  cursor: pointer;
+  list-style: none;
+}
+
+.acc summary::-webkit-details-marker {
+  display: none;
+}
+
+.acc summary svg {
+  transition: transform 0.2s;
+}
+
+.acc[open] summary svg {
+  transform: rotate(180deg);
+}
+
+.acc__body {
+  padding: 0 16px 16px;
+}
+
+.acc__body a {
+  color: var(--blue);
+  font-weight: 600;
+}

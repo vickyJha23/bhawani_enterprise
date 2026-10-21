@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!-- Bhawani Enterprise "BE" mark: navy tile, italic blue/white letters, orange accent -->
+  <rect width="64" height="64" rx="14" fill="#0b1f45"/>
+  <g transform="translate(4 0) skewX(-12)">
+    <!-- B -->
+    <path fill="#ffffff" fill-rule="evenodd" d="M12 14h13.5a7.8 7.8 0 0 1 5.2 13.9A8.4 8.4 0 0 1 26 46H12Z M19.5 20.5v5.5h5.2a2.75 2.75 0 0 0 0-5.5Z M19.5 32.5v7h6a3.5 3.5 0 0 0 0-7Z"/>
+    <!-- E -->
+    <path fill="#3b82f6" d="M38.5 14h17v6.5h-10v6H54V33h-8.5v6.5h10V46h-17Z"/>
+  </g>
+  <rect x="12" y="51" width="40" height="4" rx="2" fill="#f26a1b"/>
+</svg>

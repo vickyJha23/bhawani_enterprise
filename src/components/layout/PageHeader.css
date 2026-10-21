@@ -1,0 +1,61 @@
+.page-header {
+  position: relative;
+  overflow: hidden;
+  padding: 40px 0 44px;
+  color: #fff;
+  background:
+    radial-gradient(ellipse at 85% 0%, rgba(29, 95, 209, 0.45), transparent 55%),
+    linear-gradient(120deg, var(--navy-900), var(--navy-800));
+}
+
+.page-header h1 {
+  font-size: clamp(28px, 3.6vw, 42px);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.page-header p {
+  margin-top: 10px;
+  max-width: 640px;
+  font-size: 17px;
+  color: #c9d5ea;
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  color: #9fb0cf;
+}
+
+.breadcrumbs span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.breadcrumbs a:hover {
+  color: #fff;
+}
+
+.breadcrumbs [aria-current] {
+  color: var(--orange);
+}
+
+/* Chevron points right */
+.breadcrumbs__sep {
+  transform: rotate(-90deg);
+}
+
+@media (max-width: 640px) {
+  .page-header {
+    padding: 24px 0 28px;
+  }
+  .page-header p {
+    font-size: 15px;
+  }
+}

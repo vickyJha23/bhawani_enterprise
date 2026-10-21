@@ -1,0 +1,42 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.logo__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo__text strong {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  color: var(--navy-800);
+}
+
+.logo__text em {
+  font-style: normal;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  color: var(--orange);
+}
+
+.logo--light .logo__text strong {
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+  .logo svg {
+    width: 44px;
+  }
+  .logo__text strong {
+    font-size: 18px;
+  }
+  .logo__text em {
+    font-size: 11px;
+  }
+}
