@@ -3,7 +3,7 @@ import { Icon } from '../../components/ui/Icon'
 import { useQuote } from '../../context/quote-context'
 import { highlights } from '../../data'
 import { cx } from '../../lib/format'
-import { HeroCollage } from './HeroCollage'
+import { HeroImage } from './HeroImage'
 import './Hero.css'
 
 /** Number of highlight icons shown on small screens */
@@ -46,7 +46,7 @@ export function Hero() {
           </ul>
         </div>
 
-        <HeroCollage />
+        <HeroImage />
       </div>
     </section>
   )
