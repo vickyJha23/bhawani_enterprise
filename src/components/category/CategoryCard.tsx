@@ -8,14 +8,17 @@ import './CategoryCard.css'
 
 export function CategoryCard({ category, to = categoryHref(category.id) }: { category: Category; to?: string }) {
   return (
-    <Link className="cat-card" to={to}>
-      <div className={cx('cat-card__img', category.focusTop && 'focus-top')}>
+    <Link className={cx('cat-card', category.mobileOnly && 'mobile-only')} to={to}>
+      <div className="cat-card__img">
         <img src={category.image} alt="" loading="lazy" />
       </div>
       <div className="cat-card__body">
         <div>
-          <h3>{category.name}</h3>
-          <span className="cat-card__count">{category.count}</span>
+          <h3>
+            <span className="desktop-only">{category.name}</span>
+            <span className="mobile-only">{category.shortName}</span>
+          </h3>
+          {category.count && <span className="cat-card__count">{category.count}</span>}
         </div>
         <span className="cat-card__arrow">
           <Icon name="arrow" size={16} />

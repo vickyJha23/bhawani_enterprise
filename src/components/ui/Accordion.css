@@ -20,6 +20,11 @@
   display: none;
 }
 
+.acc[open] summary {
+  border-radius: 8px 8px 0 0;
+  background: #f1f4f9;
+}
+
 .acc summary svg {
   transition: transform 0.2s;
 }
@@ -30,6 +35,10 @@
 
 .acc__body {
   padding: 0 16px 16px;
+}
+
+.acc[open] .acc__body {
+  padding-top: 12px;
 }
 
 .acc__body a {

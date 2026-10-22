@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  max-width: 1280px;
+  max-width: var(--container);
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -17,11 +17,6 @@
   white-space: nowrap;
 }
 
-/* Crop images from the top-left (e.g. to show the lightning arrester spike) */
-.focus-top img {
-  object-position: left top;
-}
-
 /* Responsive visibility */
 .show-sm {
   display: none !important;
@@ -36,8 +31,19 @@
   }
 }
 
+/* Phone vs larger screens (640px) */
+.mobile-only {
+  display: none !important;
+}
+
 @media (max-width: 640px) {
   .container {
     padding: 0 16px;
+  }
+  .desktop-only {
+    display: none !important;
+  }
+  .mobile-only {
+    display: revert !important;
   }
 }

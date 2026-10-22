@@ -1,5 +1,5 @@
-export { images } from './images'
+export { cardImages, categoryImages, heroBackdrop, heroImage, images } from './images'
 export { categories, getCategory, isCategoryId } from './categories'
-export { products, getProduct, getRelatedProducts, getProductsByCategory } from './products'
+export { products, featuredProducts, getProduct, getRelatedProducts, getProductsByCategory } from './products'
 export { highlights, industries } from './marketing'
 export { faqs } from './resources'

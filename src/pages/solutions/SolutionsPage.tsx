@@ -24,11 +24,11 @@ export function SolutionsPage() {
             const items = getProductsByCategory(c.id)
             return (
               <article key={c.id} id={c.id} className={cx('solution', i % 2 === 1 && 'solution--flip')}>
-                <div className={cx('solution__img', c.focusTop && 'focus-top')}>
+                <div className="solution__img">
                   <img src={c.image} alt={c.name} loading="lazy" />
                 </div>
                 <div className="solution__body">
-                  <span className="solution__count">{c.count}</span>
+                  {c.count && <span className="solution__count">{c.count}</span>}
                   <h2>{c.name}</h2>
                   <p>{c.description}</p>
 

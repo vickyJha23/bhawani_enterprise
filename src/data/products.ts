@@ -1,5 +1,5 @@
 import type { Product } from '../types'
-import { images } from './images'
+import { cardImages, categoryImages, images } from './images'
 
 export const products: Product[] = [
   {
@@ -9,6 +9,8 @@ export const products: Product[] = [
     price: 90,
     unit: 'piece',
     category: 'earthing',
+    cardImage: cardImages.pit,
+    featured: true,
     images: [images.pit],
     description:
       'Heavy duty polymer earth pit cover with a lockable lid and markings for pit number and test date. Protects the earthing electrode and makes inspection easy.',
@@ -27,10 +29,12 @@ export const products: Product[] = [
   {
     id: 'pvc-cable-tray',
     name: 'PVC Cable Tray',
-    subtitle: '45 x 45 - 1 Mtr',
+    subtitle: '45 × 45 - 1 Mtr',
     price: 82,
     unit: 'piece',
     category: 'cable',
+    cardImage: cardImages.tray,
+    featured: true,
     images: [images.tray],
     description:
       'Slotted PVC wiring duct for neat routing of cables inside panels and distribution boards. Easy finger break-off slots and mounting holes.',
@@ -52,6 +56,8 @@ export const products: Product[] = [
     price: 19,
     unit: 'piece',
     category: 'accessories',
+    cardImage: cardImages.mc4,
+    featured: true,
     images: [images.mc4],
     description:
       'High quality MC4 connectors for solar PV installations. Ensures safe and reliable DC connections with weather resistant design.',
@@ -73,10 +79,12 @@ export const products: Product[] = [
   {
     id: 'acdb-dcdb-combo',
     name: 'ACDB-DCDB Combo',
-    subtitle: 'MCB - Havells, SPD - Orbit',
+    subtitle: 'MCB - Havells SPD - Orbit',
     price: 1480,
     unit: 'set',
     category: 'solar',
+    cardImage: cardImages.acdb,
+    featured: true,
     images: [images.acdb],
     description:
       'Ready-to-install single phase Solar ACDB and 1-in-1-out DCDB in transparent IP rated enclosures, pre-wired with Havells MCBs and Orbit surge protection devices.',
@@ -95,10 +103,12 @@ export const products: Product[] = [
   {
     id: 'earthing-kit-4g',
     name: 'Earthing Kit 4G Clamp',
-    subtitle: '17 mm (14mm x 1 Mtr)',
+    subtitle: '17 mm (14mm × 1 Mtr)',
     price: 900,
     unit: 'kit',
     category: 'earthing',
+    cardImage: cardImages.kit4g,
+    featured: true,
     images: [images.earthing],
     description:
       'Copper bonded earthing electrode kit with 4G clamp for reliable, low resistance grounding in solar and electrical installations.',
@@ -114,12 +124,37 @@ export const products: Product[] = [
     applications: ['Solar plants', 'Industries', 'Buildings', 'Telecom towers'],
   },
   {
+    id: 'earthing-kit-17mm',
+    name: 'Earthing Kit (17 mm)',
+    subtitle: '14 mm × 1 Mtr',
+    price: 880,
+    unit: 'kit',
+    category: 'earthing',
+    cardImage: cardImages.kit17,
+    featured: true,
+    images: [images.earthing],
+    // TODO: confirm specs with the product team
+    description:
+      'Copper bonded earthing rod kit for solar and electrical installations, giving dependable low resistance grounding.',
+    specs: [
+      ['Type', 'Copper Bonded Earthing Rod'],
+      ['Kit Size', '17 mm'],
+      ['Rod Diameter', '14 mm'],
+      ['Length', '1 Meter'],
+      ['Material', 'Copper Bonded Steel'],
+      ['Usage', 'Earthing / Grounding'],
+    ],
+    features: ['Corrosion resistant', 'Long service life', 'Low earth resistance', 'Easy installation'],
+    applications: ['Solar plants', 'Residential earthing', 'Commercial buildings', 'Electrical panels'],
+  },
+  {
     id: 'lightning-arrester',
     name: 'Lightning Arrester',
     subtitle: 'Copper Multi-Spike',
     price: 880,
     unit: 'piece',
     category: 'lightning',
+    cardImage: categoryImages.lightning,
     images: [images.earthing],
     description:
       'Copper multi-spike lightning arrester with base, safely conducting lightning strikes to earth to protect structures and solar arrays.',
@@ -145,3 +180,5 @@ export const getRelatedProducts = (product: Product, limit = 4) =>
     .slice(0, limit)
 
 export const getProductsByCategory = (category: Product['category']) => products.filter((p) => p.category === category)
+
+export const featuredProducts = products.filter((p) => p.featured)

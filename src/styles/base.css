@@ -41,6 +41,12 @@ p {
   margin: 0;
 }
 
+h1,
+h2,
+h3 {
+  font-family: var(--heading);
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
@@ -55,4 +61,13 @@ html {
 
 main {
   flex: 1;
+}
+
+/* Hide scrollbars everywhere (scrolling still works with wheel, touch and keyboard) */
+* {
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }

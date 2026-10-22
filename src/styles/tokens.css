@@ -16,6 +16,8 @@
   --radius: 10px;
   --shadow: 0 6px 20px rgba(11, 31, 69, 0.08);
   --shadow-lg: 0 18px 40px rgba(7, 22, 48, 0.35);
+  --heading: 'Montserrat', 'Inter', system-ui, sans-serif;
+  --container: 1380px;
 
   font-family: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
   font-size: 16px;

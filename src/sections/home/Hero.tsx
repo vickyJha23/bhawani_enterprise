@@ -1,28 +1,25 @@
 import { Button } from '../../components/ui/Button'
 import { Icon } from '../../components/ui/Icon'
 import { useQuote } from '../../context/quote-context'
-import { highlights } from '../../data'
+import { heroBackdrop, highlights } from '../../data'
 import { cx } from '../../lib/format'
 import { HeroImage } from './HeroImage'
 import './Hero.css'
-
-/** Number of highlight icons shown on small screens */
-const MOBILE_HIGHLIGHTS = 3
 
 export function Hero() {
   const { openQuote } = useQuote()
 
   return (
     <section className="hero">
-      <div className="hero__panels" aria-hidden="true" />
+      {/* Darkened solar-panel scene behind the whole hero */}
+      <div className="hero__backdrop" style={{ backgroundImage: `url(${heroBackdrop})` }} aria-hidden="true" />
+
       <div className="container hero__inner">
-        <div>
-          <p className="hero__eyebrow">Manufacturer & Supplier of</p>
+        <div className="hero__copy">
+          <p className="hero__eyebrow">Manufacturer &amp; Supplier of</p>
           <h1>
-            Complete <span className="nowrap">Earthing &amp;</span>
-            <br />
-            Electrical Protection
-            <br />
+            <span>Complete Earthing &amp;</span>
+            <span>Electrical Protection</span>
             <span className="hero__accent">Solutions</span>
           </h1>
           <p className="hero__lead">Reliable Products for Solar, Industrial, Commercial and Infrastructure Projects.</p>
@@ -32,15 +29,16 @@ export function Hero() {
               View Products <Icon name="arrow" size={18} />
             </Button>
             <Button variant="ghost" size="lg" onClick={() => openQuote()}>
-              Get Bulk Quote
+              Get <span className="desktop-only">Bulk</span> Quote
             </Button>
           </div>
 
           <ul className="hero__highlights">
-            {highlights.map((h, i) => (
-              <li key={h.label} className={cx(i >= MOBILE_HIGHLIGHTS && 'hide-sm')}>
-                <Icon name={h.icon} size={30} strokeWidth={1.4} />
-                <span>{h.label}</span>
+            {highlights.map((h) => (
+              <li key={h.label} className={cx(!h.mobileLabel && 'desktop-only')}>
+                <Icon name={h.icon} size={40} strokeWidth={1.3} />
+                <span className="desktop-only">{h.label}</span>
+                {h.mobileLabel && <span className="mobile-only">{h.mobileLabel}</span>}
               </li>
             ))}
           </ul>

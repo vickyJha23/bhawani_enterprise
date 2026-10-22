@@ -11,9 +11,30 @@
   text-align: left;
 }
 
+.specs td {
+  border-left: 1px solid var(--border);
+}
+
+.specs tr:nth-child(even) td {
+  background: #fafbfd;
+}
+
 .specs th {
-  width: 45%;
+  width: 40%;
   font-weight: 500;
-  color: var(--muted);
-  background: var(--bg-soft);
+  color: var(--text);
+  background: #f7f9fc;
+}
+
+@media (max-width: 640px) {
+  .specs {
+    font-size: 13.5px;
+  }
+  .specs th,
+  .specs td {
+    padding: 6px 8px;
+  }
+  .specs th {
+    white-space: nowrap;
+  }
 }

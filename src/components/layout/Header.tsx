@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, NavLink } from 'react-router'
+import { Link, NavLink, useMatch } from 'react-router'
 import { navLinks, type NavLink as NavItem } from '../../config/site'
 import { useQuote } from '../../context/quote-context'
 import { categories } from '../../data'
@@ -17,9 +17,11 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const { openQuote } = useQuote()
   const close = () => setMenuOpen(false)
+  // Product pages use their own app-style top bar on phones (as in the design)
+  const onProductPage = useMatch('/products/:id') !== null
 
   return (
-    <header className="header">
+    <header className={cx('header', onProductPage && 'header--product')}>
       <div className="container header__inner">
         <Link to="/" aria-label="Bhawani Enterprise home" onClick={close}>
           <Logo />
@@ -46,14 +48,14 @@ export function Header() {
         </nav>
 
         <div className="header__actions">
-          <Button variant="outline" square className="hide-sm" to="/products" aria-label="Search products">
-            <Icon name="search" size={18} />
+          <Link to="/products" className="icon-btn hide-sm" aria-label="Search products">
+            <Icon name="search" size={24} strokeWidth={2.2} />
+          </Link>
+          <Button variant="blue" className="hide-sm" aria-label="Get Quote" onClick={() => openQuote()}>
+            <Icon name="quote" size={18} /> <span className="header__quote-label">Get Quote</span>
           </Button>
-          <Button variant="blue" size="sm" className="hide-sm" onClick={() => openQuote()}>
-            <Icon name="quote" size={16} /> Get Quote
-          </Button>
-          <WhatsAppButton size="sm" className="hide-sm">
-            WhatsApp
+          <WhatsAppButton className="hide-sm" aria-label="WhatsApp">
+            <span className="header__wa-label">WhatsApp</span>
           </WhatsAppButton>
           <button className="icon-btn show-sm" aria-label="Menu" aria-expanded={menuOpen} onClick={() => setMenuOpen((o) => !o)}>
             <Icon name={menuOpen ? 'close' : 'menu'} size={24} />

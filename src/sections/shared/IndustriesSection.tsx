@@ -5,11 +5,11 @@ import './IndustriesSection.css'
 
 export function IndustriesSection() {
   return (
-    <Section title="Industries We Serve" subtitle="Supplying reliable solutions across multiple industries.">
+    <Section soft title="Industries We Serve" subtitle="Supplying reliable solutions across multiple industries.">
       <div className="ind-grid">
         {industries.map((ind) => (
           <div key={ind.name} className="ind-card">
-            <Icon name={ind.icon} size={30} strokeWidth={1.5} />
+            <Icon name={ind.icon} size={32} />
             <span>{ind.name}</span>
           </div>
         ))}

@@ -6,8 +6,9 @@
 }
 
 .summary__title h1 {
+  font-family: inherit;
   font-size: 28px;
-  font-weight: 900;
+  font-weight: 800;
   text-transform: uppercase;
   color: var(--navy-800);
 }
@@ -56,7 +57,13 @@
   .summary__title h1 {
     font-size: 22px;
   }
+  .summary__sub {
+    font-size: 15px;
+  }
   .summary__price {
-    font-size: 28px;
+    font-size: 30px;
+  }
+  .summary__desc {
+    font-size: 15px;
   }
 }

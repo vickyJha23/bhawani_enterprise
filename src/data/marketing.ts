@@ -1,10 +1,11 @@
 import type { Highlight, Industry } from '../types'
 
+// Hero feature icons. Items without `mobileLabel` are hidden on phones (as in the mockup).
 export const highlights: Highlight[] = [
   { icon: 'factory', label: 'Manufacturer & Supplier' },
-  { icon: 'shield', label: 'Quality Products' },
-  { icon: 'truck', label: 'Bulk Supply Pan India' },
-  { icon: 'headset', label: 'Technical Support' },
+  { icon: 'shield', label: 'Quality Products', mobileLabel: 'Quality Products' },
+  { icon: 'truck', label: 'Bulk Supply Pan India', mobileLabel: 'Pan India Delivery' },
+  { icon: 'headset', label: 'Technical Support', mobileLabel: 'Technical Support' },
   { icon: 'gear', label: 'Custom Solutions' },
 ]
 

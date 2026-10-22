@@ -19,8 +19,8 @@ export function ProductCard({ product, actions = true }: Props) {
 
   return (
     <article className="prod-card">
-      <Link to={href} className={cx('prod-card__img', product.category === 'lightning' && 'focus-top')}>
-        <img src={product.images[0]} alt={product.name} loading="lazy" />
+      <Link to={href} className="prod-card__img">
+        <img src={product.cardImage} alt={product.name} loading="lazy" />
       </Link>
       <div className="prod-card__body">
         <Link to={href}>
